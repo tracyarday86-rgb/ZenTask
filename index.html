@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTask - Task Management Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="app-header">
+        <div class="header-top">
+            <h1>ZenTask</h1>
+            <button class="theme-btn" id="theme-toggle-btn">🌙 Dark Mode</button>
+        </div>
+        <p>Your minimalist Agile workspace</p>
+    </header>
+
+    <!-- Main Container -->
+     <!-- Analytics Dashboard Banner -->
+        <section class="analytics-section">
+            <div class="stat-card count-card">
+                <h3>Total Tasks</h3>
+                <p id="total-tasks-count">0</p>
+            </div>
+            <div class="stat-card count-card">
+                <h3>In Progress</h3>
+                <p id="inprogress-tasks-count">0</p>
+            </div>
+            <div class="stat-card count-card">
+                <h3>Completed</h3>
+                <p id="completed-tasks-count">0</p>
+            </div>
+            <div class="stat-card progress-card">
+                <h3>Progress</h3>
+                <div class="progress-bar-container">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <span id="progress-percent-text">0%</span>
+            </div>
+        </section>
+    <main class="app-container">
+        
+        <!-- Task Creation Form -->
+        <section class="task-form-section">
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="What needs to be done?" required>
+                <select id="priority-input">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+                <button type="submit" id="add-task-btn">Add Task</button>
+                <button type="button" id="clear-tasks-btn" class="clear-tasks-btn">Clear All Tasks</button>
+            </form>
+            <div class="clear-confirmation" id="clear-confirmation" hidden>
+                <span>Clear all tasks?</span>
+                <button type="button" id="confirm-clear-btn">Clear tasks</button>
+                <button type="button" id="cancel-clear-btn">Cancel</button>
+            </div>
+        </section>
+
+        <!-- Kanban Board Columns -->
+        <div class="kanban-board">
+            
+            <!-- To Do Column -->
+            <div class="kanban-column" id="todo-column">
+                <h2>To Do</h2>
+                <div class="task-list" id="todo-list">
+                    <!-- Tasks will appear here -->
+                </div>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="kanban-column" id="inprogress-column">
+                <h2>In Progress</h2>
+                <div class="task-list" id="inprogress-list">
+                    <!-- Tasks will appear here -->
+                </div>
+            </div>
+
+            <!-- Done Column -->
+            <div class="kanban-column" id="done-column">
+                <h2>Done</h2>
+                <div class="task-list" id="done-list">
+                    <!-- Tasks will appear here -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
